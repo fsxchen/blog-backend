@@ -36,7 +36,9 @@ class MaterialCategory(models.Model):
     en_desc = models.TextField(null=True, blank=True, verbose_name="类别描述", help_text="类别描述")
     image = models.ImageField(upload_to="comment/category/image/%Y/%m", null=True, blank=True, help_text="图片")
     category_level = models.CharField(max_length=20, choices=CATEGORY_LEVEL, verbose_name="类目级别", help_text="类目级别")
-    parent_category = models.ForeignKey("self", null=True, blank=True, verbose_name="父类目级别", help_text="父目录",
+    parent_category = models.ForeignKey("self", null=True, blank=True, 
+                                        on_delete=models.DO_NOTHING,
+                                        verbose_name="父类目级别", help_text="父目录",
                                         related_name="sub_category")
     is_active = models.BooleanField(default=True, verbose_name="是否激活", help_text="是否激活")
     is_tab = models.BooleanField(default=True, verbose_name="是否导航", help_text="是否导航")
@@ -65,7 +67,7 @@ class MaterialTag(models.Model):
     """
     name = models.CharField(max_length=30, null=False, blank=False, verbose_name="标签名", help_text="标签名")
     en_name = models.CharField(max_length=30, null=True, blank=True, verbose_name="英文名", help_text="英文名")
-    category = models.ForeignKey(MaterialCategory, null=True, blank=True, verbose_name="类别", help_text="类别")
+    category = models.ForeignKey(MaterialCategory, null=True, blank=True, on_delete=models.DO_NOTHING, verbose_name="类别", help_text="类别")
     color = models.CharField(max_length=20, default="blue", verbose_name="颜色", help_text="颜色")
     add_time = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name="添加时间", help_text="添加时间")
 
@@ -145,7 +147,7 @@ class MaterialPicture(models.Model):
     en_desc = models.CharField(max_length=255, null=True, blank=True, verbose_name="摘要", help_text="摘要")
     image = models.ImageField(upload_to="comment/picture/image/%Y/%m", null=True, blank=True, verbose_name="图片",
                               help_text="图片")
-    camera = models.ForeignKey(MaterialCamera, null=True, blank=True, verbose_name="拍摄相机", help_text="拍摄相机")
+    camera = models.ForeignKey(MaterialCamera, null=True, blank=True, on_delete=models.DO_NOTHING, verbose_name="拍摄相机", help_text="拍摄相机")
     link = models.URLField(null=True, blank=True, verbose_name="链接", help_text="链接")
     add_time = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name="添加时间", help_text="添加时间")
 
@@ -186,7 +188,7 @@ class PostBaseInfo(models.Model):
     desc = models.CharField(max_length=255, null=True, blank=True, verbose_name="简介", help_text="简介")
     en_desc = models.CharField(max_length=255, null=True, blank=True, verbose_name="英文简介", help_text="英文简介")
     author = models.CharField(max_length=20, null=True, blank=True, verbose_name="作者", help_text="作者")
-    category = models.ForeignKey(MaterialCategory, null=False, blank=False, verbose_name="类别", help_text="类别")
+    category = models.ForeignKey(MaterialCategory, null=False, blank=False, on_delete=models.DO_NOTHING, verbose_name="类别", help_text="类别")
     tags = models.ManyToManyField(MaterialTag, through="PostTag", through_fields=('post', 'tag'))
     post_type = models.CharField(max_length=20, choices=POST_TYPE, null=True, blank=True, verbose_name="POST类别",
                                  help_text="POST类别")
@@ -197,7 +199,7 @@ class PostBaseInfo(models.Model):
                                     help_text="大图833*217，小图243*207")
     front_image_type = models.CharField(max_length=20, default="0", choices=FRONT_IMAGE_TYPE, verbose_name="封面图类别",
                                         help_text="封面图类别")
-    license = models.ForeignKey(MaterialLicense, null=True, blank=True, verbose_name="版权", help_text="版权")
+    license = models.ForeignKey(MaterialLicense, null=True, blank=True, on_delete=models.DO_NOTHING, verbose_name="版权", help_text="版权")
     is_hot = models.BooleanField(default=False, verbose_name="是否热门", help_text="是否热门")
     is_recommend = models.BooleanField(default=False, verbose_name="是否推荐", help_text="是否推荐")
     is_banner = models.BooleanField(default=False, verbose_name="是否是Banner", help_text="是否是Banner")
@@ -239,8 +241,8 @@ class PostTag(models.Model):
     """
     Post标签
     """
-    post = models.ForeignKey(PostBaseInfo, null=False, blank=False, verbose_name="文章", help_text="文章")
-    tag = models.ForeignKey(MaterialTag, null=False, blank=False, verbose_name="标签", help_text="标签")
+    post = models.ForeignKey(PostBaseInfo, null=False, blank=False, on_delete=models.DO_NOTHING, verbose_name="文章", help_text="文章")
+    tag = models.ForeignKey(MaterialTag, null=False, blank=False, on_delete=models.DO_NOTHING, verbose_name="标签", help_text="标签")
     add_time = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name="添加时间", help_text="添加时间")
 
     class Meta:
@@ -260,7 +262,9 @@ class MaterialBanner(models.Model):
     image = models.ImageField(upload_to="comment/banner/image/%y/%m", null=True, blank=True, verbose_name="图片",
                               help_text="图片")
     url = models.URLField(max_length=200, verbose_name="链接", help_text="链接")
-    category = models.ForeignKey(MaterialCategory, default='1', null=False, blank=False, verbose_name="类别",
+    category = models.ForeignKey(MaterialCategory, default='1', null=False, blank=False,
+                                 on_delete=models.DO_NOTHING,
+                                 verbose_name="类别",
                                  help_text="类别")
     index = models.IntegerField(default=0, verbose_name="顺序", help_text="顺序")
     add_time = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name="添加时间", help_text="添加时间")

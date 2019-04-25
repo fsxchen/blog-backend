@@ -5,7 +5,6 @@ from django.utils.safestring import mark_safe
 from xadmin.sites import site
 from xadmin.views import BaseAdminPlugin, ModelFormAdminView, DetailAdminView, ListAdminView
 
-from BlogBackendProject.settings import MEDIA_URL_PREFIX
 
 def get_gallery_modal():
     return """
@@ -43,13 +42,13 @@ class AdminImageWidget(forms.FileInput):
     def __init__(self, attrs={}):
         super(AdminImageWidget, self).__init__(attrs)
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         output = []
         if value and hasattr(value, "url"):
             label = self.attrs.get('label', name)
-            output.append('<a href="%s/%s" target="_blank" title="%s" data-gallery="gallery"><img src="%s/%s" class="field_img"/></a><br/>%s ' %
-                         (MEDIA_URL_PREFIX, value.name, label, MEDIA_URL_PREFIX, value.name, _('Change:')))
-        output.append(super(AdminImageWidget, self).render(name, value, attrs))
+            output.append('<a href="%s" target="_blank" title="%s" data-gallery="gallery"><img src="%s" class="field_img"/></a><br/>%s ' %
+                         (value.url, label, value.url, _('Change:')))
+        output.append(super(AdminImageWidget, self).render(name, value, attrs, renderer))
         return mark_safe(u''.join(output))
 
 

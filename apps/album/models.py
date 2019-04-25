@@ -28,8 +28,8 @@ class AlbumPhoto(models.Model):
     """
     图集图片
     """
-    album = models.ForeignKey(AlbumInfo, null=False, blank=False, verbose_name="图集", help_text="图集")
-    picture = models.ForeignKey(MaterialPicture, null=False, blank=False, verbose_name="图片", help_text="图片")
+    album = models.ForeignKey(AlbumInfo, null=False, blank=False, on_delete=models.DO_NOTHING, verbose_name="图集", help_text="图集")
+    picture = models.ForeignKey(MaterialPicture, null=False, blank=False, on_delete=models.DO_NOTHING, verbose_name="图片", help_text="图片")
     add_time = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name="添加时间", help_text="添加时间")
 
     class Meta:

@@ -31,7 +31,7 @@ class ArticleDetail(models.Model):
         ("EN", "English")
     )
     language = models.CharField(null=True, blank=True, max_length=5, choices=LANGUAGE, verbose_name="文章详情语言类别", help_text="现暂时提供两种语言类别")
-    article_info = models.ForeignKey(ArticleInfo, null=True, blank=True, related_name='details', verbose_name="内容", help_text="内容")
+    article_info = models.ForeignKey(ArticleInfo, null=True, blank=True, on_delete=models.DO_NOTHING, related_name='details', verbose_name="内容", help_text="内容")
     origin_content = models.TextField(null=False, blank=True, verbose_name="原始内容", help_text="原始内容")
     formatted_content = models.TextField(verbose_name="处理后内容", help_text="处理后内容")
     add_time = models.DateTimeField(null=True, blank=True, verbose_name="添加时间", help_text="添加时间")

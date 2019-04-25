@@ -120,8 +120,8 @@ class BloggerInfo(models.Model):
 
 class BloggerSocial(models.Model):
     name = models.CharField(default="", max_length=20, verbose_name="名称", help_text="名称")
-    blogger = models.ForeignKey(BloggerInfo, verbose_name="个人", help_text="个人")
-    social = models.ForeignKey(MaterialSocial, verbose_name="社交平台", help_text="社交平台")
+    blogger = models.ForeignKey(BloggerInfo, on_delete=models.DO_NOTHING, verbose_name="个人", help_text="个人")
+    social = models.ForeignKey(MaterialSocial, on_delete=models.DO_NOTHING, verbose_name="社交平台", help_text="社交平台")
     index = models.IntegerField(default=0, verbose_name="顺序", help_text="顺序")
     add_time = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name="添加时间", help_text="添加时间")
 
@@ -135,8 +135,8 @@ class BloggerSocial(models.Model):
 
 class BloggerMaster(models.Model):
     name = models.CharField(default="", max_length=20, verbose_name="名称", help_text="名称")
-    blogger = models.ForeignKey(BloggerInfo, verbose_name="个人", help_text="个人")
-    master = models.ForeignKey(MaterialMaster, verbose_name="技能", help_text="技能")
+    blogger = models.ForeignKey(BloggerInfo, on_delete=models.DO_NOTHING, verbose_name="个人", help_text="个人")
+    master = models.ForeignKey(MaterialMaster, on_delete=models.DO_NOTHING, verbose_name="技能", help_text="技能")
     index = models.IntegerField(default=0, verbose_name="顺序", help_text="顺序")
     add_time = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name="添加时间", help_text="添加时间")
 
@@ -150,8 +150,8 @@ class BloggerMaster(models.Model):
 
 class SiteInfoNavigation(models.Model):
     name = models.CharField(default="", max_length=20, verbose_name="名称", help_text="名称")
-    site = models.ForeignKey(SiteInfo, verbose_name="网站", help_text="网站")
-    navigation = models.ForeignKey(NavigationLink, verbose_name="导航", help_text="导航")
+    site = models.ForeignKey(SiteInfo, on_delete=models.DO_NOTHING, verbose_name="网站", help_text="网站")
+    navigation = models.ForeignKey(NavigationLink, on_delete=models.DO_NOTHING, verbose_name="导航", help_text="导航")
     index = models.IntegerField(default=0, verbose_name="顺序", help_text="顺序")
     add_time = models.DateTimeField(auto_now_add=True, null=True, blank=True, verbose_name="添加时间", help_text="添加时间")
 

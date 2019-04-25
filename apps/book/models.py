@@ -92,6 +92,7 @@ class BookDetail(models.Model):
     )
     language = models.CharField(null=True, blank=True, max_length=5, choices=LANGUAGE, verbose_name="文章详情语言类别", help_text="现暂时提供两种语言类别")
     book_info = models.ForeignKey(BookInfo, null=True, blank=True, related_name='details', verbose_name="内容",
+                                  on_delete=models.DO_NOTHING,
                                   help_text="内容")
     origin_content = models.TextField(null=False, blank=False, verbose_name="原始内容", help_text="原始内容")
     formatted_content = models.TextField(verbose_name="处理后内容", help_text="处理后内容")
@@ -124,11 +125,11 @@ class BookNoteInfo(PostBaseInfo):
         ("2", "二级"),
         ("3", "三级")
     )
-    book = models.ForeignKey(BookInfo, null=True, blank=True, verbose_name='图书', help_text="图书")
+    book = models.ForeignKey(BookInfo, null=True, blank=True, on_delete=models.DO_NOTHING, verbose_name='图书', help_text="图书")
     chapter = models.CharField(max_length=20, null=False, blank=False, default="", verbose_name="章节", help_text="所属章节")
     note_type = models.CharField(max_length=20, null=True, blank=True, choices=NOTE_TYPE, verbose_name="笔记级别",
                                  help_text="笔记级别")
-    parent_note = models.ForeignKey("self", null=True, blank=True, verbose_name="父笔记", help_text="父笔记",
+    parent_note = models.ForeignKey("self", null=True, blank=True, on_delete=models.DO_NOTHING, verbose_name="父笔记", help_text="父笔记",
                                     related_name="sub_note")
     is_reading = models.BooleanField(default=False, verbose_name="是否正在阅读", help_text="是否正在阅读")
     is_completed = models.BooleanField(default=False, verbose_name="是否读完", help_text="是否读完")
@@ -157,6 +158,7 @@ class BookNoteDetail(models.Model):
     )
     language = models.CharField(null=True, blank=True, max_length=5, choices=LANGUAGE, verbose_name="文章详情语言类别", help_text="现暂时提供两种语言类别")
     book_note_info = models.ForeignKey(BookNoteInfo, null=True, blank=True, related_name='details', verbose_name="内容",
+                                       on_delete=models.DO_NOTHING,
                                        help_text="内容")
     origin_content = models.TextField(null=False, blank=False, verbose_name="原始内容", help_text="原始内容")
     formatted_content = models.TextField(verbose_name="处理后内容", help_text="处理后内容")
@@ -180,7 +182,7 @@ class BookNoteDetail(models.Model):
 
 
 class BookResource(models.Model):
-    book = models.ForeignKey(BookInfo, verbose_name=u"图书")
+    book = models.ForeignKey(BookInfo, on_delete=models.DO_NOTHING, verbose_name=u"图书")
     name = models.CharField(max_length=100, verbose_name=u"名称")
     download = models.FileField(max_length=100, upload_to="book/resource/%Y/%m", verbose_name=u"资源文件")
     add_time = models.DateTimeField(auto_now_add=True, verbose_name=u"添加时间")

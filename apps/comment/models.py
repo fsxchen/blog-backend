@@ -12,14 +12,14 @@ class CommentInfo(models.Model):
     """
     评论基本信息
     """
-    post = models.ForeignKey(PostBaseInfo, null=False, blank=False, verbose_name='所属文章')
-    author = models.ForeignKey(GuestProfile, null=True, blank=True, related_name="comments", verbose_name='作者')
-    reply_to_author = models.ForeignKey(GuestProfile, null=True, blank=True, related_name="be_comments",
+    post = models.ForeignKey(PostBaseInfo, null=False, blank=False, on_delete=models.DO_NOTHING, verbose_name='所属文章')
+    author = models.ForeignKey(GuestProfile, null=True, blank=True, on_delete=models.DO_NOTHING, related_name="comments", verbose_name='作者')
+    reply_to_author = models.ForeignKey(GuestProfile, null=True, blank=True, on_delete=models.DO_NOTHING, related_name="be_comments",
                                         verbose_name='被回复人')
     comment_level = models.IntegerField(default=0, verbose_name="评论级别", help_text="评论级别")
-    parent_comment = models.ForeignKey("self", null=True, blank=True, related_name="sub_comment", verbose_name="根评论",
+    parent_comment = models.ForeignKey("self", null=True, blank=True, on_delete=models.DO_NOTHING, related_name="sub_comment", verbose_name="根评论",
                                        help_text="根评论")
-    reply_to_comment = models.ForeignKey("self", null=True, blank=True, related_name='reply_comment',
+    reply_to_comment = models.ForeignKey("self", null=True, blank=True, on_delete=models.DO_NOTHING, related_name='reply_comment',
                                          verbose_name='父级评论')
     like_num = models.IntegerField(default=0, verbose_name="点赞数", help_text="点赞数")
     unlike_num = models.IntegerField(default=0, verbose_name="反对数", help_text="反对数")
@@ -42,6 +42,7 @@ class CommentDetail(models.Model):
     评论详细信息
     """
     comment_info = models.OneToOneField(CommentInfo, null=True, blank=True, related_name='detail',
+                                        on_delete=models.DO_NOTHING,
                                         verbose_name="基本信息",
                                         help_text="基本信息")
     origin_content = models.TextField(null=False, blank=False, verbose_name="原始内容", help_text="原始内容")
