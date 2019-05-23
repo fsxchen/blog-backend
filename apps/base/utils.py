@@ -274,20 +274,20 @@ MARKDOWN_EXTENSIONS_DEFAULT = [
 
 # python markdown extension pymdownx
 MARKDOWN_EXTENSIONS_PYMDOWNX = [
-    'pymdownx.extra',
-    'pymdownx.superfences',
-    'pymdownx.magiclink',
-    'pymdownx.tilde',
-    'pymdownx.emoji',
-    'pymdownx.tasklist',
-    'pymdownx.superfences',
-    'pymdownx.details',
-    'pymdownx.highlight',
-    'pymdownx.inlinehilite',
-    'pymdownx.keys',
-    'pymdownx.progressbar',
-    'pymdownx.critic',
-    'pymdownx.arithmatex'
+    # 'pymdownx.extra',
+    # 'pymdownx.superfences',
+    # 'pymdownx.magiclink',
+    # 'pymdownx.tilde',
+    # 'pymdownx.emoji',
+    # 'pymdownx.tasklist',
+    # 'pymdownx.superfences',
+    # 'pymdownx.details',
+    # 'pymdownx.highlight',
+    # 'pymdownx.inlinehilite',
+    # 'pymdownx.keys',
+    # 'pymdownx.progressbar',
+    # 'pymdownx.critic',
+    # 'pymdownx.arithmatex'
 ]
 
 # python markdown extension custom
