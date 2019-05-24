@@ -31,6 +31,8 @@ from movie.apiview import MovieBaseInfoListViewset, MovieDetailInfoListViewset
 from book.apiview import BookBaseInfoListViewset, BookDetailInfoListViewset, BookNoteBaseInfoListViewset, BookNoteDetailInfoListViewset
 from material.apiview import CategoryListViewset, SingleLevelCategoryListViewset, TagListViewset, \
     MaterialBannerListViewset, PostBaseInfoListViewset, PostLikeViewset, VerifyPostAuthViewset
+
+from daily_think.apiview import DailyThinkViewset
 from comment.apiview import CommentDetailListViewset, CommentLikeViewset
 from base.apiview import SiteInfoViewset, BloggerInfoViewset, FriendLinkListViewset
 from user.apiview import EmailCodeViewset
@@ -73,6 +75,9 @@ router.register(r'bookNoteDetailInfos', BookNoteDetailInfoListViewset, base_name
 
 # 时光轴
 router.register(r'postBaseInfos', PostBaseInfoListViewset, base_name="postBaseInfos")
+
+# daily think
+router.register(r'dailyThink', DailyThinkViewset, base_name="dailyThink")
 
 # 网站信息
 router.register(r'siteInfo', SiteInfoViewset, base_name="siteInfo")

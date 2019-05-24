@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 PERSONAL_APPS = [
     'haystack',
+    'poem',
     'base.apps.BaseConfig',
     'index',
     'material.apps.MaterialConfig',
@@ -57,7 +58,8 @@ PERSONAL_APPS = [
     'comment.apps.CommentConfig',
     'user.apps.UserConfig',
     'user_operation.apps.UserOperationConfig',
-    'book.apps.BookConfig'
+    'book.apps.BookConfig',
+    'daily_think'
 ]
 
 EXTRA_APPS = [
