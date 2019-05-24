@@ -32,6 +32,8 @@ from book.apiview import BookBaseInfoListViewset, BookDetailInfoListViewset, Boo
 from material.apiview import CategoryListViewset, SingleLevelCategoryListViewset, TagListViewset, \
     MaterialBannerListViewset, PostBaseInfoListViewset, PostLikeViewset, VerifyPostAuthViewset
 
+from poem.apiview import PoemViewset
+
 from daily_think.apiview import DailyThinkViewset
 from comment.apiview import CommentDetailListViewset, CommentLikeViewset
 from base.apiview import SiteInfoViewset, BloggerInfoViewset, FriendLinkListViewset
@@ -64,6 +66,9 @@ router.register(r'albumDetailInfos', AlbumDetailInfoListViewset, base_name="albu
 # 电影
 router.register(r'movieBaseInfos', MovieBaseInfoListViewset, base_name="movieBaseInfos")
 router.register(r'movieDetailInfos', MovieDetailInfoListViewset, base_name="movieDetailInfos")
+
+# 诗词
+router.register(r'poems', PoemViewset, base_name="poems")
 
 # 图书
 router.register(r'bookBaseInfos', BookBaseInfoListViewset, base_name='bookBaseInfos')
