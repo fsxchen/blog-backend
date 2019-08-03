@@ -15,4 +15,4 @@ class PoemViewset(viewsets.ModelViewSet):
     # 过滤，搜索，排序
     filter_backends = (DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter)
     # filter_class = ArticleFilter
-    search_fields = ('auth_name',)
+    search_fields = ('auth_name', 'title',)

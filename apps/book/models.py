@@ -39,22 +39,29 @@ class BookInfo(PostBaseInfo):
     is_update_douban_info = models.BooleanField(default=False, verbose_name='是否更新', help_text='会自动更新所有未填写的豆瓣信息')
 
     def __str__(self):
-        return self.book_name
+        return self.book_name if self.book_name else "unkonw"
 
     def save(self, *args, **kwargs):
         self.post_type = 'book'
-        # 豆瓣信息
+        if not self.book_name:
+            self.book_name = self.title
+            self.book_tags = 'untag'
+        # 豆瓣信息， 现在豆瓣的图书信息无法使用
         if self.is_update_douban_info:
             douban_infos = requests.get(
                 '{0}/{1}/{2}'.format(DOUBAN_API_URL, self.douban_type, self.douban_id))
+            # 豆瓣的api还没有处理
             douban_infos_dict = json.loads(douban_infos.text)
+
+
             if douban_infos_dict:
                 if not self.book_isbn10:
                     self.book_isbn10 = douban_infos_dict['isbn10']
                 if not self.book_isbn13:
                     self.book_isbn13 = douban_infos_dict['isbn13']
                 if not self.book_name:
-                    self.book_name = douban_infos_dict['title']
+                    self.book_name = self.title
+                    # self.book_name = douban_infos_dict['title']
                 if not self.book_origin_name:
                     self.book_origin_name = douban_infos_dict['origin_title']
                 if not self.book_author:
