@@ -101,3 +101,4 @@ ENV/
 .mypy_cache/
 .idea/
 BlogBackendProject/private.py
+db.sqlite3
