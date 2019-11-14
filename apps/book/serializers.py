@@ -75,11 +75,11 @@ class BookBaseInfoSerializer(serializers.ModelSerializer):
 
     def get_front_image(self, book):
         if book.front_image:
-            return "{0}/{1}".format(MEDIA_URL_PREFIX, book.front_image)
+            return "http://image.kexke.com/{0}/{1}".format(MEDIA_URL_PREFIX, book.front_image)
 
     def get_book_image(self, book):
         if book.book_image:
-            return "{0}/{1}".format(MEDIA_URL_PREFIX, book.book_image)
+            return "http://image.kecke.com/{0}/{1}".format(MEDIA_URL_PREFIX, book.book_image)
 
     def get_need_auth(self, article):
         if article.browse_password_encrypt:
@@ -133,11 +133,11 @@ class BookDetailInfoSerializer(serializers.ModelSerializer):
 
     def get_front_image(self, book):
         if book.front_image:
-            return "{0}/{1}".format(MEDIA_URL_PREFIX, book.front_image)
+            return "http://image.kexke.com/{0}/{1}".format(MEDIA_URL_PREFIX, book.front_image)
 
     def get_book_image(self, book):
         if book.book_image:
-            return "{0}/{1}".format(MEDIA_URL_PREFIX, book.book_image)
+            return "http://image.kexke.com/{0}/{1}".format(MEDIA_URL_PREFIX, book.book_image)
 
     def get_book_note(self, serializer):
         book_notes_json = []
