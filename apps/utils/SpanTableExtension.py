@@ -40,7 +40,7 @@ License: [BSD](http://www.opensource.org/licenses/bsd-license.php)
 from __future__ import unicode_literals
 from markdown.blockprocessors import BlockProcessor
 from markdown.extensions import Extension
-from markdown.inlinepatterns import BacktickPattern, BACKTICK_RE
+from markdown.inlinepatterns import BACKTICK_RE
 from markdown.util import etree
 
 
@@ -200,7 +200,7 @@ class SpanTableProcessor(BlockProcessor):
             # fallback on old behaviour
             return row.split(marker)
         # modify the backtick pattern to only match at the beginning of the search string
-        backtick_pattern = BacktickPattern('^' + BACKTICK_RE)
+        backtick_pattern = '^' + BACKTICK_RE
         elements = []
         current = ''
         i = 0

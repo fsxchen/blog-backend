@@ -29,7 +29,7 @@ class SelectMultipleTransfer(forms.SelectMultiple):
         return u'<option value="%s">%s</option>' % (
             escape(option_value), conditional_escape(force_text(option_label))), bool(option_value in selected_choices)
 
-    def render(self, name, value, attrs=None, choices=()):
+    def render(self, name, value, attrs=None, choices=(), renderer=None):
         if attrs is None:
             attrs = {}
         attrs['class'] = ''

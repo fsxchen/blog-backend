@@ -122,5 +122,5 @@ urlpatterns = [
     # 文档
     url(r'docs/', include_docs_urls(title="文档", public=False)),
     # 前端页面入口
-    url(r'^.*$', IndexView.as_view(), name="index")
+    # url(r'^.*$', IndexView.as_view(), name="index")
 ]

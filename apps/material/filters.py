@@ -15,8 +15,8 @@ class CategoryFilter(django_filters.rest_framework.FilterSet):
     """
     分类的过滤类
     """
-    level_min = django_filters.NumberFilter(name='category_level', lookup_expr='gte')
-    level_max = django_filters.NumberFilter(name='category_level', lookup_expr='lte')
+    level_min = django_filters.NumberFilter(field_name='category_level', lookup_expr='gte')
+    level_max = django_filters.NumberFilter(field_name='category_level', lookup_expr='lte')
 
     top_category = django_filters.NumberFilter(method='top_category_filter')
 
@@ -34,8 +34,8 @@ class MaterialBannerFilter(django_filters.rest_framework.FilterSet):
     """
     分类的过滤类
     """
-    level_min = django_filters.NumberFilter(name='category_level', lookup_expr='gte')
-    level_max = django_filters.NumberFilter(name='category_level', lookup_expr='lte')
+    level_min = django_filters.NumberFilter(field_name='category_level', lookup_expr='gte')
+    level_max = django_filters.NumberFilter(field_name='category_level', lookup_expr='lte')
 
     top_category = django_filters.NumberFilter(method='top_category_filter')
 
@@ -53,8 +53,8 @@ class PostBaseInfoFilter(django_filters.rest_framework.FilterSet):
     """
     文章的过滤类
     """
-    time_min = django_filters.DateFilter(name='add_time', lookup_expr='gte')
-    time_max = django_filters.DateFilter(name='add_time', lookup_expr='lte')
+    time_min = django_filters.DateFilter(field_name='add_time', lookup_expr='gte')
+    time_max = django_filters.DateFilter(field_name='add_time', lookup_expr='lte')
 
     top_category = django_filters.NumberFilter(method='top_category_filter')
 

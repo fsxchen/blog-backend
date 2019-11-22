@@ -42,7 +42,7 @@ class PagedownWidget(forms.Textarea):
             ))
     media = property(_media)
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         if value is None:
             value = ""
         if VERSION < (1, 11):

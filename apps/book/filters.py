@@ -15,8 +15,8 @@ class BookFilter(django_filters.rest_framework.FilterSet):
     """
     书籍的过滤类
     """
-    time_min = django_filters.DateFilter(name='add_time', lookup_expr='gte')
-    time_max = django_filters.DateFilter(name='add_time', lookup_expr='lte')
+    time_min = django_filters.DateFilter(field_name='add_time', lookup_expr='gte')
+    time_max = django_filters.DateFilter(field_name='add_time', lookup_expr='lte')
 
     top_category = django_filters.NumberFilter(method='top_category_filter')
 
@@ -34,8 +34,8 @@ class BookNoteFilter(django_filters.rest_framework.FilterSet):
     """
     书籍笔记的过滤类
     """
-    time_min = django_filters.DateFilter(name='add_time', lookup_expr='gte')
-    time_max = django_filters.DateFilter(name='add_time', lookup_expr='lte')
+    time_min = django_filters.DateFilter(field_name='add_time', lookup_expr='gte')
+    time_max = django_filters.DateFilter(field_name='add_time', lookup_expr='lte')
 
     top_category = django_filters.NumberFilter(method='top_category_filter')
 

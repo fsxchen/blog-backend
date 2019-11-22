@@ -14,8 +14,8 @@ class CommentFilter(django_filters.rest_framework.FilterSet):
     """
     评论的过滤类
     """
-    time_min = django_filters.DateFilter(name='add_time', lookup_expr='gte')
-    time_max = django_filters.DateFilter(name='add_time', lookup_expr='lte')
+    time_min = django_filters.DateFilter(field_name='add_time', lookup_expr='gte')
+    time_max = django_filters.DateFilter(field_name='add_time', lookup_expr='lte')
 
     post_id = django_filters.NumberFilter(method='post_id_filter')
 
