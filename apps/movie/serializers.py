@@ -6,7 +6,7 @@ from rest_framework import serializers
 
 from movie.models import MovieInfo, MovieDetail
 from material.serializers import SingleLevelCategorySerializer, TagSerializer, LicenseSerializer
-from BlogBackendProject.settings import MEDIA_URL_PREFIX
+from project.settings import MEDIA_URL_PREFIX
 
 
 class MovieDetailSerializer(serializers.ModelSerializer):

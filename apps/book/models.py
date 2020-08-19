@@ -4,7 +4,7 @@ import json
 from django.db import models
 
 from material.models import MaterialCategory, MaterialTag, PostBaseInfo
-from BlogBackendProject.settings import DOUBAN_API_URL
+from project.settings import DOUBAN_API_URL
 from base.utils import MARKDOWN_EXTENSIONS, MARKDOWN_EXTENSION_CONFIGS
 
 

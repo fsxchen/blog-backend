@@ -100,7 +100,7 @@ ENV/
 # mypy
 .mypy_cache/
 .idea/
-BlogBackendProject/private.py
+project/private.py
 db.sqlite3
 mydatabase
 migrations/

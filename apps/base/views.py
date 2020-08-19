@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic.base import View
 
 from user.models import GuestProfile
-from BlogBackendProject.settings import SITE_BASE_URL
+from project.settings import SITE_BASE_URL
 
 
 # Create your views here.

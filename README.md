@@ -2,7 +2,7 @@
 
 Blog has been online, welcome to browse：[https://blog.coderap.com/](https://blog.coderap.com/)
 
-> [中文版说明](https://github.com/LennonChin/BlogBackendProject/blob/master/README_zh-cn.md)
+> [中文版说明](https://github.com/LennonChin/project/blob/master/README_zh-cn.md)
 
 > This repository stores the backend code for blog entries, built using Django and the Django Rest Framework.
 
@@ -12,17 +12,17 @@ Blog has been online, welcome to browse：[https://blog.coderap.com/](https://bl
 
 ### PC Platform
 
-![Home Page](https://github.com/LennonChin/BlogBackendProject/blob/master/media/PC_1.png)
+![Home Page](https://github.com/LennonChin/project/blob/master/media/PC_1.png)
 
-![Article List Page](https://github.com/LennonChin/BlogBackendProject/blob/master/media/PC_2.png)
+![Article List Page](https://github.com/LennonChin/project/blob/master/media/PC_2.png)
 
-![Add Article Page](https://github.com/LennonChin/BlogBackendProject/blob/master/media/PC_3.png)
+![Add Article Page](https://github.com/LennonChin/project/blob/master/media/PC_3.png)
 
-![Add Article Page](https://github.com/LennonChin/BlogBackendProject/blob/master/media/PC_4.png)
+![Add Article Page](https://github.com/LennonChin/project/blob/master/media/PC_4.png)
 
 ### Mobile Platform
 
-![Mobile effect](https://github.com/LennonChin/BlogBackendProject/blob/master/media/MOBILE_1.png)
+![Mobile effect](https://github.com/LennonChin/project/blob/master/media/MOBILE_1.png)
 
 ## Overall technology stack
 

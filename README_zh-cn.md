@@ -2,27 +2,27 @@
 
 博客已上线，欢迎浏览：[https://blog.coderap.com/](https://blog.coderap.com/)
 
-> [English description](https://github.com/LennonChin/BlogBackendProject/blob/master/README.md)
+> [English description](https://github.com/LennonChin/project/blob/master/README.md)
 
 > 该仓库存放了博客项目的后端代码，使用Django及Django Rest Framework搭建。
 
-> 注：与该仓库配合的前端代码仓库链接在此[BlogBackendProject](https://github.com/LennonChin/Blog-Frontend-Project)，前端代码使用Vue.js + Vue-Router + iView.js实现。
+> 注：与该仓库配合的前端代码仓库链接在此[project](https://github.com/LennonChin/Blog-Frontend-Project)，前端代码使用Vue.js + Vue-Router + iView.js实现。
 
 ## 控制台后端效果
 
 ### PC端
 
-![Home Page](https://github.com/LennonChin/BlogBackendProject/blob/master/media/PC_1.png)
+![Home Page](https://github.com/LennonChin/project/blob/master/media/PC_1.png)
 
-![Article List Page](https://github.com/LennonChin/BlogBackendProject/blob/master/media/PC_2.png)
+![Article List Page](https://github.com/LennonChin/project/blob/master/media/PC_2.png)
 
-![Add Article Page](https://github.com/LennonChin/BlogBackendProject/blob/master/media/PC_3.png)
+![Add Article Page](https://github.com/LennonChin/project/blob/master/media/PC_3.png)
 
-![Add Article Page](https://github.com/LennonChin/BlogBackendProject/blob/master/media/PC_4.png)
+![Add Article Page](https://github.com/LennonChin/project/blob/master/media/PC_4.png)
 
 ### 手机端
 
-![Mobile effect](https://github.com/LennonChin/BlogBackendProject/blob/master/media/MOBILE_1.png)
+![Mobile effect](https://github.com/LennonChin/project/blob/master/media/MOBILE_1.png)
 
 ## 整体技术栈
 

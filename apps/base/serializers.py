@@ -6,7 +6,7 @@ from rest_framework import serializers
 
 from .models import SiteInfo, BloggerInfo, NavigationLink, FriendLink
 from material.serializers import MaterialMasterSerializer, MaterialSocialSerializer
-from BlogBackendProject.settings import MEDIA_URL_PREFIX
+from project.settings import MEDIA_URL_PREFIX
 
 
 class NavigationLinkSerializer(serializers.ModelSerializer):

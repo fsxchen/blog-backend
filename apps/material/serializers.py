@@ -11,7 +11,7 @@ from rest_framework import serializers
 from material.models import MaterialCategory, MaterialTag, MaterialLicense, PostBaseInfo, MaterialBanner, \
     MaterialCamera, MaterialPicture, MaterialSocial, MaterialMaster, PostTag
 
-from BlogBackendProject.settings import MEDIA_URL_PREFIX, PHOTO_URL
+from project.settings import MEDIA_URL_PREFIX, PHOTO_URL
 
 
 # 子级分类排序过滤，只取显示在tab上的，且按index排序

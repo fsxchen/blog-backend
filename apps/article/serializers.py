@@ -6,7 +6,7 @@ from rest_framework import serializers
 
 from article.models import ArticleInfo, ArticleDetail
 from material.serializers import SingleLevelCategorySerializer, TagSerializer, LicenseSerializer
-from BlogBackendProject.settings import MEDIA_URL_PREFIX
+from project.settings import MEDIA_URL_PREFIX
 
 
 class ArticleDetailSerializer(serializers.ModelSerializer):

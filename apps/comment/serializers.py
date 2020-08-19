@@ -13,7 +13,7 @@ from material.models import PostBaseInfo
 from user.serializers import GuestSerializer
 from user.models import GuestProfile
 
-from BlogBackendProject.settings import SITE_BASE_URL
+from project.settings import SITE_BASE_URL
 from base.utils import send_email
 
 

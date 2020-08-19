@@ -6,7 +6,7 @@ from rest_framework import serializers
 
 from .models import BookInfo, BookDetail, BookNoteInfo, BookNoteDetail
 from material.serializers import SingleLevelCategorySerializer, TagSerializer, LicenseSerializer
-from BlogBackendProject.settings import MEDIA_URL_PREFIX
+from project.settings import MEDIA_URL_PREFIX
 
 
 # 图书详细信息

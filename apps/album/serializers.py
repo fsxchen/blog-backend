@@ -6,7 +6,7 @@ from rest_framework import serializers
 
 from .models import AlbumInfo, AlbumPhoto
 from material.serializers import SingleLevelCategorySerializer, TagSerializer, PictureSerializer
-from BlogBackendProject.settings import MEDIA_URL_PREFIX, PHOTO_URL
+from project.settings import MEDIA_URL_PREFIX, PHOTO_URL
 
 
 class AlbumDetailSerializer(serializers.ModelSerializer):

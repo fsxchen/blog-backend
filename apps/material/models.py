@@ -3,7 +3,7 @@ import hashlib
 from django.db import models
 
 from user.models import GuestProfile
-from BlogBackendProject.settings import SITE_BASE_URL
+from project.settings import SITE_BASE_URL
 
 
 class MaterialCategory(models.Model):

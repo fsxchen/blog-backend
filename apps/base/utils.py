@@ -14,9 +14,9 @@ from rest_framework.pagination import PageNumberPagination
 from rest_framework.pagination import LimitOffsetPagination
 
 from user.models import EmailVerifyRecord
-from BlogBackendProject.private import PRIVATE_QINIU_ACCESS_KEY, PRIVATE_QINIU_SECRET_KEY, PRIVATE_QINIU_BUCKET_NAME, \
+from project.private import PRIVATE_QINIU_ACCESS_KEY, PRIVATE_QINIU_SECRET_KEY, PRIVATE_QINIU_BUCKET_NAME, \
     PRIVATE_MEDIA_URL_PREFIX
-from BlogBackendProject.settings import SITE_BASE_URL, MEDIA_URL_PREFIX, EMAIL_FROM
+from project.settings import SITE_BASE_URL, MEDIA_URL_PREFIX, EMAIL_FROM
 from utils.RelativeImageExtension import RelativeImageExtension
 from utils.SpanTableExtension import SpanTableExtension
 

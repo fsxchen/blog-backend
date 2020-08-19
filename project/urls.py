@@ -1,4 +1,4 @@
-"""BlogBackendProject URL Configuration
+"""project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -42,7 +42,7 @@ from rest_framework_jwt.views import obtain_jwt_token
 from user.apiview import EmailCodeViewset
 from user_operation.apiview import QiniuTokenViewset
 
-from BlogBackendProject.settings import MEDIA_ROOT
+from project.settings import MEDIA_ROOT
 
 from index.views import IndexView
 from index.apiview import SearchViewViewSet
