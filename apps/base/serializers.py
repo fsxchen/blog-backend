@@ -1,3 +1,10 @@
+'''
+Author: yangxingchen
+Date: 2019-04-25 14:42:35
+LastEditors: yangxingchen
+LastEditTime: 2020-08-19 19:20:03
+Description: 
+'''
 # _*_ coding: utf-8 _*_
 __author__ = 'LennonChin'
 __date__ = '2017/12/9 13:31'
@@ -6,7 +13,7 @@ from rest_framework import serializers
 
 from .models import SiteInfo, BloggerInfo, NavigationLink, FriendLink
 from material.serializers import MaterialMasterSerializer, MaterialSocialSerializer
-from project.settings import MEDIA_URL_PREFIX
+from project.settings import MEDIA_URL_PREFIX, PHOTO_URL
 
 
 class NavigationLinkSerializer(serializers.ModelSerializer):
@@ -26,7 +33,7 @@ class SiteInfoSerializer(serializers.ModelSerializer):
 
     def get_background(self, blogger_info):
         if blogger_info.background:
-            return "{0}/{1}".format(MEDIA_URL_PREFIX, blogger_info.background)
+            return "http://{0}/{1}".format(PHOTO_URL, blogger_info.background)
 
     class Meta:
         model = SiteInfo
